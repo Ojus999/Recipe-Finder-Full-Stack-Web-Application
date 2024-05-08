@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.get("/send", async (req, res) => {
   const recipe = req.query.data;
-  console.log("Requested Recipe:", recipe);  
+  console.log("Requested Recipe: ", recipe);  
   try{
     const data = await getRecipe(recipe);
   console.log("Received Data:", data);
