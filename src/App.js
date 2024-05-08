@@ -4,6 +4,7 @@ import Body from "./Components/Body";
 import { useState } from "react";
 import axios from "axios";
 import icon from "./icon.png";
+import Card from "./Components/Card";
 
 function App() {
   let [search, setSearch] = useState("");
@@ -12,9 +13,10 @@ function App() {
   function sendSearch() {
     axios
       .get(`http://127.0.0.1:3001/send?data=${search}`)
-      .then((res) => {
-        setData(res);
-        console.log(data)
+      .then((res) => {        
+        console.log(res.data)
+        setData(res.data);
+        // console.log(data);
       })
       .catch((err) => console.log(err));
   }
@@ -24,6 +26,8 @@ function App() {
     <div className="App">
       <Header />
       <Body />
+
+
       <div className="search--div">
         <input
           type="text"
@@ -33,6 +37,14 @@ function App() {
         />
         <img src={icon} alt="Search Icon" id="search-icon" onClick={sendSearch} />
       </div>
+
+      <div className="card--collection">
+        {data.map((element,index) => {
+          return <Card id = {element.id} title ={element.title} image = {element.image} key = {index}/>
+        })}
+      </div>
+
+
     </div>
   );
 }

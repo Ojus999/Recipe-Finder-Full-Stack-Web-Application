@@ -8,20 +8,16 @@ app.use(express.json());
 
 app.get("/send", async (req, res) => {
   const recipe = req.query.data;
-  console.log("Requested Recipe: ", recipe);  
-  try{
+  console.log("Requested Recipe: ", recipe);
+  try {
     const data = await getRecipe(recipe);
-  console.log("Received Data:", data);
-  res.send(data);
-
-  } catch(error){
-    console.log("Error in fetching",error);
+    console.log("Received Data:", data);
+    res.send(data);
+  } catch (error) {
+    console.log("Error in fetching", error);
     res.status(500).send("Error fetching recipe");
   }
-  
-  
 });
-
 
 async function getRecipe(recipe) {
   try {
@@ -33,7 +29,7 @@ async function getRecipe(recipe) {
     // console.log(21, resp.data);
     return resp.data.results;
   } catch (error) {
-    console.log("Error fetching recipe: ",error);
+    console.log("Error fetching recipe: ", error);
     throw error;
   }
 }
