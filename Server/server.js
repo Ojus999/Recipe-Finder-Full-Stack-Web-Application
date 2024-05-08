@@ -6,12 +6,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/send", async (req, res) => {
-  const recipe = req.body.data;
-  console.log(recipe);  
-  await getRecipe(recipe);
-  res.sendStatus(200);
+app.get("/send", async (req, res) => {
+  const recipe = req.query.data;
+  console.log("Requested Recipe:", recipe);  
+  try{
+    const data = await getRecipe(recipe);
+  console.log("Received Data:", data);
+  res.send(data);
+
+  } catch(error){
+    console.log("Error in fetching",error);
+    res.status(500).send("Error fetching recipe");
+  }
+  
+  
 });
+
 
 async function getRecipe(recipe) {
   try {
@@ -20,9 +30,11 @@ async function getRecipe(recipe) {
     let resp = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${recipe}&number=10`
     );
-    console.log(21, resp.data);
-  } catch (e) {
-    console.log(e);
+    // console.log(21, resp.data);
+    return resp.data.results;
+  } catch (error) {
+    console.log("Error fetching recipe: ",error);
+    throw error;
   }
 }
 

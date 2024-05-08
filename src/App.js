@@ -7,13 +7,18 @@ import icon from "./icon.png";
 
 function App() {
   let [search, setSearch] = useState("");
+  let [data,setData] = useState([])
 
   function sendSearch() {
     axios
-      .post("http://127.0.0.1:3001/send", { data: search })
-      .then((res) => console.log(res.data))
+      .get(`http://127.0.0.1:3001/send?data=${search}`)
+      .then((res) => {
+        setData(res);
+        console.log(data)
+      })
       .catch((err) => console.log(err));
   }
+  
 
   return (
     <div className="App">
