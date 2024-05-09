@@ -5,7 +5,7 @@ function Recipe({ recipe }) {
   return (
     <div className="recipe-container">
       <h1 className="recipe-title">{recipe.title}</h1>
-      <img className="recipe-image" src={recipe.image} alt={recipe.title} />
+      <center> <img className="recipe-image" src={recipe.image} alt={recipe.title} /> </center> 
       <div className="recipe-details">
         <p><span className="detail-label">Servings:</span> {recipe.servings}</p>
         <p><span className="detail-label">Ready in Minutes:</span> {recipe.readyInMinutes}</p>
