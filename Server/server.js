@@ -65,7 +65,7 @@ app.get("/send", async (req, res) => {
 async function getRecipe(recipe) {
     try {
         console.log("Inside async function");
-        const apiKey = "be9239b2ed564167a5d1074f798c67cf";
+        const apiKey = "ae0636d4501d4470af462802baf0528f";
         let resp = await axios.get(
             `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${recipe}&number=10`
         );

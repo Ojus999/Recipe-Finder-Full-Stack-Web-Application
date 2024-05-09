@@ -1,0 +1,86 @@
+.recipe-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .recipe-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .recipe-details p {
+    margin: 5px 0;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+  }
+  
+  .recipe-ingredients {
+    margin-bottom: 20px;
+  }
+  
+  .ingredient-item {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .recipe-summary {
+    margin-bottom: 20px;
+  }
+  
+  .recipe-summary h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-wine-pairing {
+    margin-bottom: 20px;
+  }
+  
+  .recipe-wine-pairing h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .wine-pairing-text {
+    margin: 5px 0;
+  }
+  
+  .product-match {
+    margin-bottom: 20px;
+  }
+  
+  .product-match h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .product-image {
+    width: 100;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .buy-now-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .buy-now-link:hover {
+    text-decoration: underline;
+  }
+  
