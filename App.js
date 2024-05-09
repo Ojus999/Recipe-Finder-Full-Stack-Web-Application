@@ -56,7 +56,7 @@ function App() {
         <img src={icon} alt="Search Icon" id="search-icon" onClick={sendSearch} />
         
       </div>
-      <center><br/><br/><
+      <center><br/><br/>
       <button onClick={displayfunc}>Display saved items</button></center>
       <div className="card--collection">
         {data.map((element,index) => {
