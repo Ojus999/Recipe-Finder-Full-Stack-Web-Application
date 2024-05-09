@@ -11,7 +11,7 @@ import Recipe from "./Recipe";
 
 
 function App() {
-  let [search, setSearch] = useState("");
+  let [search, setSearch] = useState("");  //State Management for search query
   let [data, setData] = useState([]);
   const [userdata, setUserdata] = useState([]);
   const [loading, setLoading] = useState(false); // State variable for loading

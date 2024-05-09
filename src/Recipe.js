@@ -1,5 +1,5 @@
 import React from 'react';
-import './Recipe.css'; // Import CSS file for styling
+import './Recipe.css'; 
 
 function Recipe({ recipe }) {
   return (

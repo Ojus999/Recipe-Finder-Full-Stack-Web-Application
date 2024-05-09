@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import "../App.css";
-import Recipe from "../Recipe";
+// import Recipe from "../Recipe";
 
 export default function Card({ id, title, image, flag, change}) {
 
